@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_cwurdata
+    columns:
+      - name: institution
+        tests:          
+          - not_null
+
+  - name: stg_school_and_country
+    columns:
+      - name: country
+        tests:
+          - not_null

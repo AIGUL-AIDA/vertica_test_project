@@ -1,0 +1,14 @@
+
+    truncate table "docker"."dbt_schema"."cwurData";
+    -- dbt seed --
+    
+        copy "docker"."dbt_schema"."cwurData"
+        (world_rank, institution, country, national_rank, quality_of_education, alumni_employment, quality_of_faculty, publications, influence, citations, broad_impact, patents, score, year)
+        from local 'C:\Users\davletova\vertica_test_project\dbt\data\cwurData.csv'
+        delimiter ','
+        enclosed by '"'
+        skip 1
+        abort on error
+        rejected data as table "docker"."dbt_schema".seed_rejects;
+    
+  

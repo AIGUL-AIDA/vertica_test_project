@@ -1,0 +1,20 @@
+version: 2
+
+seeds:
+  - name: cwurData
+    description: University Ranking data
+    docs:
+      show: true
+    columns:
+      - name: country        
+        tests:          
+          - not_null
+  - name: school_and_country_table
+    description: Table for university against country
+    docs:
+      show: true
+    columns:
+      - name: country
+        description: Primary key of the table
+        tests:
+          - not_null

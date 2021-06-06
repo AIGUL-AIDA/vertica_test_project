@@ -1,0 +1,16 @@
+
+    
+    create table "docker"."dbt_schema"."educational_attainment_supplementary_data" (country_name varchar(62),series_name varchar(136),f1985 numeric(18,5),f1986 numeric(18,5),f1987 numeric(18,5),f1990 numeric(18,5),f1991 numeric(18,5),f1992 numeric(18,5),f1993 numeric(18,5),f1995 numeric(18,9),f1996 numeric(18,5),f1997 integer,f1998 numeric(18,9),f1999 numeric(18,5),f2000 numeric(18,9),f2001 numeric(18,9),f2002 numeric(18,9),f2003 numeric(18,9),f2004 numeric(18,9),f2005 numeric(18,9),f2006 numeric(18,9),f2007 numeric(18,9),f2008 numeric(18,9),f2009 numeric(18,9),f2010 numeric(18,9),f2011 numeric(18,9),f2012 numeric(18,9),f2013 numeric(18,9),f2015 integer)
+  ;
+    -- dbt seed --
+    
+        copy "docker"."dbt_schema"."educational_attainment_supplementary_data"
+        (country_name, series_name, f1985, f1986, f1987, f1990, f1991, f1992, f1993, f1995, f1996, f1997, f1998, f1999, f2000, f2001, f2002, f2003, f2004, f2005, f2006, f2007, f2008, f2009, f2010, f2011, f2012, f2013, f2015)
+        from local 'C:\Users\davletova\vertica_test_project\dbt\data\educational_attainment_supplementary_data.csv'
+        delimiter ','
+        enclosed by '"'
+        skip 1
+        abort on error
+        rejected data as table "docker"."dbt_schema".seed_rejects;
+    
+  
